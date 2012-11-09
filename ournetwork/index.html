@@ -1,0 +1,119 @@
+---
+layout: ournetwork
+category: ournetwork
+---
+
+<header>
+	
+   <h1>Our network</h1>
+   <p class="intro">We work with some of the most experienced people in the industry. We don't compromise.</p>
+</header>
+  
+  <div class="column-main">
+   <h2>About our network</h2>
+   <section class="aboutnetwork">
+    <p>It's <b>hard</b> to find <i>good</i> software development talent.</p>
+    <p>In the UK, most great software developers want control of their own destiny, which tends to lead them into contracting. We have embraced this trend and built a network from some of the best programmers, QAs, scrum masters and business analysts available. The people in our network each bring many years of experience of software development.</p> 
+    <p>We have a diverse and inspirational collection of people who speak at conferences, write books, run open source projects, and have deep experience in many business domains and technologies.</p>
+   </section>
+   {% comment %}
+    <h2>Articles from the network</h2>
+	{% for post in paginator.posts  %}
+	{% if post.isArticle %}
+		<section class="networkarticle">
+	    <h3><a href="{{post.sourceUrl}}" title="{{post.title}}" target="_blank">{{post.title}}</a></h3>    
+	    <h4>{{post.author}} <i>{{post.discipline}}</i></h4>
+		<img class="photo" src="{{post.imagePath}}" alt="">
+		<p class="networkarticle-date">{{ post.date | date: "%d %B %Y" }}</p>
+		<p class="networkarticle-summary">{{post.content}} <a class="offsite" href="{{post.sourceUrl}}" title="{{post.title}}" target="_blank">Read full article</a></p>
+	   </section>
+	{% endif %}	   
+	{% endfor %}
+   	<section></section>
+   {% endcomment %}
+  </div>
+    
+  <div class="column-secondary">
+   {% comment %}
+  	<h2>The Network</h2>
+   	<div class="thenetwork clearfix">
+    <ul>
+    	 {% for post in paginator.posts  %}
+		 {% if post.isProfile %}
+			 <li>
+				<img class="photo" src="{{post.imagePath}}" alt="" onmouseover="showProfile(this)">
+				  <div class="profile">
+				   <img class="arrow" src="/asset/images/icon-arrow.png" alt="">
+				   <h3>{{post.title}}</h3>
+				   <p class="discipline"><i>{{post.discipline}}</i></p>
+				   <a class="site" href="{{post.site}}" title="#">Random Thoughts blog</a>
+				   <p class="bio">{{post.content}}</p>
+				  </div>
+				</li>
+			{% endif %}			
+   		{% endfor %}
+    </ul>
+   </div>
+   {% endcomment %}
+   
+   <h2>Join our network. Interested?</h2>
+   <form id="form" name="joinfrom"  class="form" >
+    <fieldset>
+	 <legend>Contact form</legend>
+	 <div>
+	  <p>
+	  	<input id="joinform-ourNetwork" name="source"  value="joinNetwork" type="hidden"/>
+	   <label for="joinform-name">Your name</label>
+	   <img src="/asset/images/icon-requiredfield.png" alt="Required field" class="requiredfield">
+	  </p>
+	  <input id="joinform-name" name="name" type="text" onblur="clearFieldError(this)">
+	 </div>
+	 <div>
+ 	  <p>
+	   <label for="joinform-email">Email address</label>
+	   <img src="/asset/images/icon-requiredfield.png" alt="Required field" class="requiredfield">
+	  </p>
+	  <input id="joinform-email" name="email" type="text" onblur="clearFieldError(this)">
+	 </div>
+	 <div>
+ 	  <p>
+	   <label for="joinform-expertise">Area of expertise</label>
+	   <img src="/asset/images/icon-requiredfield.png" alt="Required field" class="requiredfield">
+	  </p>
+	  <input id="joinform-expertise" name="message" type="text" onblur="clearFieldError(this)">
+	 </div>
+	 <div>
+	 	  	<p>
+		   	<label for="joinform-tel">Contact number</label>
+		  	</p>
+		  	<input id="joinform-tel" name="joinform-tel" type="text">
+	 </div>
+	 <div>
+           <p>
+           <label for="joinform-who">Do you know someone in the network?</label>
+          </p>
+          <input id="joinform-who" name="joinform-who" type="text" onblur="clearFieldError(this)">
+     </div>
+	 
+	  <div>
+          <p>
+	           <label for="joinform-cv">Upload your CV (pdf, doc, docx, odt)</label>
+          </p>
+	  	 
+          <input id="joinform-cv" name="joinform-cv" type="file" value="" style="font-size: 11px" onblur="clearFieldError(this)">
+     </div>
+	 
+	 <!--div>
+           <p>
+           <label for="math-challenge">Please answer this simple math question.</label>
+          </p>
+          <label id="firstNumber">num1</label> + <label id="secondNumber">num2</label>=<input class="mathAnswer" id="math-answer" name="math-answer" type="text" onblur="clearFieldError(this)">
+     </div-->
+     	 
+<!-- 	 	<input class="submit" type="button"  value="Say hello!" onclick="submitJoinNetworkForm()" > -->
+	
+	<input class="submit" type="button"  value="Say hello!"  onclick="submitForm()" >
+	</fieldset>
+   </form>
+  </div>
+  

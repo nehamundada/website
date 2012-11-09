@@ -1,0 +1,8 @@
+---
+layout: post
+title: JSFoo 2012
+category: events
+date: 21 Jan 2012
+location: Pune India
+summary: <a href="http://www.linkedin.com/pub/anil-tarte/26/9a9/554">Anil Tarte</a> of Equal Experts demonstrated behaviour and test-driven development to incrementally build rich internet applications with Javascript.<br><a href="http://funnel.hasgeek.com/jsfoo-pune/181-how-to-apply-bdd-and-tdd-practices-using-jasmine-library">More details</a>
+---

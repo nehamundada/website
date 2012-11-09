@@ -1,0 +1,25 @@
+---
+layout: home
+---
+
+  <header>
+   <h1>Equal Experts blog</h1>   
+  </header>
+
+
+  <div class="column-main"> 
+   <article class="blogentry">
+    <h2>{{page.title}}</h2>
+	<p class="blogdate">{{ page.date | date: "%d %B %Y" }}</p>
+	{% if page.imagePath %}
+		<p class="blogthumbnail"><img src="{{page.imagePath}}" height="80" width="80" alt="{{page.title}}"></p>
+	{% endif %}
+	
+	<section class="blogarticle">
+	 {{content}}
+    </section>
+   </article>
+  </div>
+      
+  {% include featured_clients.html %}
+ 

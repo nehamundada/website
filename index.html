@@ -1,0 +1,26 @@
+---
+layout: home
+category: home
+---
+<header>
+   <!-- <img src="asset/images/banner.png" alt="#" class="banner"> -->
+   <h1>Do more. With less.</h1>
+   <p class="intro">We deliver great software, built by great people. <a href="/about/" title="Discover what we can offer you"><strong>Learn more</strong></a>.</p>
+  </header>
+
+  <div class="column-main">
+   <h2>Latest articles from the <a href="/blog/" title="Equal Experts blog"><b>blog</b></a></h2>
+   {% for post in paginator.posts limit:3 %}
+		<section class="blogentry">
+	    <h3><a href="{{post.url}}" title="{{post.title}}">{{post.title}}</a></h3>
+		<p class="blogdate">{{ post.date | date: "%d %B %Y" }}</p>
+		
+		{% if post.imagePath %}
+			<p class="blogthumbnail"><img src="{{post.imagePath}}" height="80" width="80" alt="#"></p>
+		{% endif %}
+		<p class="blogsummary">{{post.summary}} <a href="{{post.url}}" title="{{post.title}}">Read full article</a></p>
+	   </section>
+   {% endfor %}
+  </div>
+      
+  {% include featured_clients.html %}

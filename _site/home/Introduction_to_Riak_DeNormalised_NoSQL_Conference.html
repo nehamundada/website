@@ -1,0 +1,335 @@
+ <!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+ <!-- Load typekit font in async way -->
+ <script type="text/javascript">
+  TypekitConfig = {
+    kitId: 'tah8ljg'
+  };
+  (function() {
+    var tk = document.createElement('script');
+    tk.src = '//use.typekit.com/' + TypekitConfig.kitId + '.js';
+    tk.type = 'text/javascript';
+    tk.async = 'true';
+    tk.onload = tk.onreadystatechange = function() {
+      var rs = this.readyState;
+      if (rs && rs != 'complete' && rs != 'loaded') return;
+      try { Typekit.load(TypekitConfig); } catch (e) {}
+    };
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(tk, s);
+  })();
+</script>
+<meta charset="utf-8">
+ <meta name="description" content="Do more. With less. We deliver great software, built by great people.">
+ <meta name="keywords" content="">
+ <meta name="author" content="Equal Experts">
+ <!--<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">-->
+ <title>Equal Experts | Do more. With less.</title>
+ <link rel="stylesheet" media="all" href="/asset/styles/styles.css">
+ <link rel="shortcut icon" href="/asset/images/favicon.png">
+ <link rel="apple-touch-icon-precomposed" href="/asset/images/favicon-apple.png">
+ <!--[if IE]>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <![endif]-->
+
+<!-- 
+ <script type="text/javascript" src="http://use.typekit.com/tah8ljg.js"></script>
+ <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+-->
+ <script src="/asset/scripts/jquery.min.js"></script>
+ <script src="/asset/scripts/jquery.form.min.js"></script>
+ <script src="/asset/scripts/join-network.js"></script>
+ 
+ 
+ <!-- Google analytics code -->
+ <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29757748-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+ <body id="home">
+ <header id="banner">
+  <div class="inner clearfix">
+   <strong>
+    <a href="http://equalexperts.com" title="Return to homepage" rel="home"><img src="/asset/images/logo.png" alt="Equal Experts"></a>
+   </strong>
+   <nav role="navigation">
+    <ul>
+     <li class="active"><a href="/" title="Homepage"><b>Home</b></a></li>
+     <li><a href="/about" title="About us">About us</a></li> 
+     <li><a href="/casestudies" title="Case studies">Case studies</a></li>
+     <li><a href="/events" title="Events">Events</a></li>
+     <li><a href="/ournetwork" title="Our network">Our network</a></li>
+     <li><a href="/contact" title="Contact">Contact</a></li>
+    </ul>
+   </nav>
+   </div>
+ </header>
+ <div id="content" class="clearfix" role="main">
+    <header>
+   <h1>Equal Experts blog</h1>   
+  </header>
+
+
+  <div class="column-main"> 
+   <article class="blogentry">
+    <h2>Introduction to Riak at DeNormalised 2012</h2>
+	<p class="blogdate">03 October 2012</p>
+	
+	
+	<section class="blogarticle">
+	 <a href='http://basho.com/products/riak-overview/'><img src='/asset/images/riaklogo.png' title='Riak' style='float:left;padding-right:10px;' /></a>
+<p><a href='http://twitter.com/caseyrosenthal'>Casey Rosenthal</a> of <a href='http://basho.com'>Basho</a> gave an introduction to <a href='http://basho.com/products/riak-overview/'>Riak</a> on the first day of the <a href='http://skillsmatter.com/event/java-jee/denormalised-nosql-roadshow-2012'>DeNormalised conference</a> and ran one of the hands on training sessions on the second day.</p>
+
+<p>Apart from doing a great job of introducing Riak, Casey won the quote of the conference competition, if there was such a thing.</p>
+
+<blockquote>
+<p>&#8220;Riak scales so well I couldn&#8217;t fit it on the slide&#8221;</p>
+</blockquote>
+
+<h2 id='quick_intro_to_riak'>Quick intro to Riak</h2>
+
+<p>Here are some basic concepts to keep in mind when considering whether to use Riak.</p>
+
+<h3 id='riak_is_a_masterless_cluster'>Riak is a masterless cluster</h3>
+
+<p>This is the key to Riak&#8217;s claim to being a highly scalable distributed database. You can make a request of any node in the cluster and you will get the same response. You can write data to any node in the cluster and the data will be persisted. This is a very different concept to the databases that most people are used to working with such as MySQL, Oracle or even other NoSQL offerings such as MongoDB or Neo4j. All the aforementioned databases have a master node. The most common pattern being that you can read from any node, but only write to the master.</p>
+
+<h3 id='riak_terminology'>Riak terminology</h3>
+
+<p>The statements below don&#8217;t cover everything but are some key terms that you need to understand within the context of Riak.</p>
+
+<p>A <em>cluster</em> is made up of many <em>nodes</em>.</p>
+
+<p>A <em>cluster</em> can have many <em>buckets</em> of <em>objects</em>.</p>
+
+<p><em>Buckets</em> are namespaces for <em>objects</em>.</p>
+
+<p><em>Objects</em> have a <em>key</em>, a <em>value</em> and <em>metadata</em>.</p>
+
+<p>A <em>key</em> is a <em>String</em></p>
+
+<p>A <em>value</em> can be anything</p>
+
+<p>You can check out the <a href='http://wiki.basho.com/Riak-Glossary.html'>Riak Glossary</a> for a more in-depth explanaition of these terms.</p>
+
+<h3 id='data_distribution_hashing_and_the_ring'>Data distribution, hashing and the ring</h3>
+
+<p>Each node has a number of <a href='http://wiki.basho.com/Riak-Glossary.html#Vnode'>vNodes</a>, or &#8220;Virtual Nodes&#8221;, which are used for the purpose of distributing data across the cluster. Riak uses a hashing algorithm to determine which vNode should store the data for an object. The hash function takes the bucket name and key name as inputs and produces an integer from 0 to 2^160. Each vNode owns a range of numbers from 0 to 2^160. The distribution of these vNodes is known as the ring. Below is a simplified diagram showing how vNodes are distributed across the hash function output number range and also across nodes.</p>
+
+<p><img src='/asset/images/ring_ish.png' alt='Riak vNode Distribution' /></p>
+
+<p>N.B. The default number of vNodes is 32. I&#8217;ve just shown 16 vNodes distributed over 4 nodes to simplify the concept.</p>
+
+<p><img src='/asset/images/ring_writing_to.png' alt='Writing an object to Riak' /></p>
+
+<p>Once the hash value of the object has been calculated then data is sent to the vNode that manages the range which the number lives within. The data is then written to the next two (assuming the default replication value of 3) vNodes in the sequence. This ensures the data is replicated over a number of physical machines due to the distribution of vNodes over physical machines.</p>
+
+<h2 id='querying_riak'>Querying Riak</h2>
+
+<p>You can get data out of Riak in a number of ways:</p>
+
+<ul>
+<li>Query by key (it&#8217;s a key value store, so I guess you would expect this!)</li>
+
+<li>Query by secondary index</li>
+
+<li>Full-text search</li>
+
+<li>MapReduce</li>
+</ul>
+
+<h3 id='querying_riak_by_key'>Querying Riak by key</h3>
+
+<p>The primary method of getting data out of Riak is to query by key. This is the fastest and most efficient method, as the same hashing algorithm can be used to find the node on which the data lives and then return the data to the client. Here&#8217;s some example Java code adding a new object and fetching it by key.</p>
+<pre>
+@Test
+public void putSomethingInRiak() throws RiakException {
+    PBClientConfig pbConfig = new PBClientConfig.Builder()
+            .withHost("127.0.0.1")
+            .withPort(8081)
+            .build();
+
+    IRiakClient riakClient = RiakFactory.newClient(pbConfig);
+    bucket = riakClient.fetchBucket("denormalised").execute();
+    bucket.store("key1", "value1").execute();
+
+    IRiakObject myData = bucket.fetch("key1").execute();
+
+    assertThat(myData.getValueAsString(), is("value1"));
+}
+</pre>
+<h3 id='querying_riak_by_secondary_index'>Querying Riak by secondary index</h3>
+
+<p>Riak implements secondary indexes to allow clients to fetch data using a wider selection criteria than just a key. Secondary indexes are stored in metadata associated with the object. This data is passed to Riak as HTTP headers in the request. Objects with secondary indexes can then be queried by those index key-value pairs. See the Java example below:</p>
+<pre>
+
+@Test
+public void secondaryIndexTest() throws IOException, RiakException {
+    PBClientConfig pbConfig = new PBClientConfig.Builder()
+            .withHost("127.0.0.1")
+            .withPort(8081)
+            .build();
+
+    IRiakClient riakClient = RiakFactory.newClient(pbConfig);
+    bucket = riakClient.fetchBucket("denormalised").execute();
+
+    assertTrue(RiakTestProperties.is2iEnabled());
+
+    IRiakObject blue = RiakObjectBuilder.newBuilder("denormalised", "key1")
+            .withValue("Has a secondary index [blue]")
+            .addIndex("colour", "blue")
+            .build();
+
+    IRiakObject red = RiakObjectBuilder.newBuilder("denormalised", "key2")
+            .withValue("Has another secondary index [red]")
+            .addIndex("colour", "red")
+            .build();
+
+    bucket.store(blue).execute();
+    bucket.store(red).execute();
+
+    List&lt;String&gt; results = bucket.fetchIndex(BinIndex.named("colour")).withValue("blue").execute();
+    assertThat(results.size(), is(1));
+
+    IRiakObject resultLookup = bucket.fetch(results.get(0)).execute();
+    assertThat(resultLookup.getValueAsString().contains("[blue]"), is(true));
+}
+
+</pre>
+<p>While secondary indexes provide more querying flexibility they must be used with care considering the following limitations:</p>
+
+<ul>
+<li>If your cluster is large (ring size &gt; 512 partitions), performance can be poor</li>
+
+<li>All results are always returned, so pagination is not supported</li>
+
+<li>Results are not ordered, clients must take responsibility for this</li>
+
+<li>Composite queries are not supported</li>
+</ul>
+
+<h2 id='why_its_interesting'>Why it&#8217;s interesting</h2>
+
+<p>Riak looks like a fascinating product. The highlights for me are:</p>
+
+<ul>
+<li>masterless &amp; distributed - allows for the very real possibility of zero downtime</li>
+
+<li>simple scaling - add and remove physical nodes at will and the database rebalances data all while continuing to serve requests</li>
+</ul>
+
+<p>As with most technologies though, you&#8217;ve got to have a good reason to start using it. So when might you consider Riak? If the answer is yes to a number of the following questions then it&#8217;s worth looking into Riak a bit further:</p>
+
+<ul>
+<li>Is your data key / value shaped?</li>
+
+<li>Do you need to process a large number of concurrent read / write transactions?</li>
+
+<li>Will even a small amount of downtime cost your business a large amount of money?</li>
+
+<li>Do you need the ability to easily scale your database servers up and down?</li>
+</ul>
+
+<p>I&#8217;ve just scratched the surface of Riak here. A distributed database that scales by simply adding more nodes is not without it&#8217;s complexities. As Casey said in his session, &#8216;Distributed computing is hard, that&#8217;s official Basho company policy&#8217;. For some problems the hard work and hard thinking is worth it, for many (probably more than would care to admit it) it is not.</p>
+
+<p>When putting new technologies, such as Riak into use, make sure you test everything early. There is nothing better than putting together a walking skeleton, test driving the features, then load testing early and continuously to make sure the system stands up to your design assumptions.</p>
+
+<h3 id='a_perfect_use_case'>A perfect use case</h3>
+
+<p>I&#8217;ll leave you with one proven use case where we know Riak makes sense. Looking at the above criteria, a great usecase for Riak would be a shopping cart service for an exceptionally popular eCommerce site. Imagine millions of users adding products to, and removing products from, their basket, which is probably keyed on their user ID or a basket ID. A popular eCommerce site must handle many many thousands of updates a second. If the shopping basket is unavailable then your company starts losing money. People can&#8217;t buy anything if they can&#8217;t add products to their basket. Also you have seasonal peaks, the busiest online shopping period is November and December, so being able to scale up the servers to deal with more requests is a must.</p>
+
+<p>It should come as no suprise then that the inspiration for Riak was the <a href='http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf'>Dynamo white paper</a>. A white paper describing a highly available key-value store developed by the worlds largest eCommerce site, Amazon.</p>
+<hr />
+<p>Post by <a href='http://twitter.com/jonmdickinson'>Jon Dickinson.</a></p>
+
+<p>Jon is the Director of Innovation at Equal Experts. He loves getting his hands on new technologies and finding out what interesting things everyone else at EE is getting up to. He runs the <a href='http://www.meetup.com/DeNormalised-London/'>DeNormalised meetup group</a> as a way of keeping an eye on what is happening in the evolving world of database technologies.</p>
+    </section>
+   </article>
+  </div>
+      
+  <div class="column-secondary featuredclients">
+ <h2>Featured <a href="/casestudies/" title="Equal Experts clients"><b>clients</b></a></h2>
+ <section>
+	<p><img src="/asset/images/client-o2.png" alt="O2"></p>
+	<p>O2 is a dynamic, well loved brand and a pleasure to work with. Over our time with O2 we have delivered a number of projects. The highest profile of which was their innovative mobile offers product, Priority Moments.</p>
+	<p><a href="/casestudies/" title="O2 case study">Learn more</a></p>
+ </section>
+ <section>
+	<p><img src="/asset/images/client-rightmove.png" alt="Rightmove"></p>
+	<p>EqualExperts were commissioned to develop Rightmove's iPad application to coincide with the launch of the iPad in the UK. With five weeks to deliver from start to finish this was a fast paced, high energy project!</p>
+  <p><a href="/casestudies/" title="Rightmove case study">Learn more</a></p>
+ </section>
+ <section>
+	<p><img src="/asset/images/client-tieto.png" alt="Tieto"></p>
+	<p>By combining our enterprise-friendly agile approach, project leadership and technical expertise with Tieto's unique domain knowledge, we were able to go from a clean sheet of paper to the beta release of the system in 18 months and 12,000 man-days, whilst constantly adapting to the changing market conditions.</p>
+  <p><a href="/casestudies/" title="Tieto case study">Learn more</a></p>
+ </section>   
+</div>
+ 
+
+  <!-- 
+  <article id="article">
+   <section id="section1"></section>
+   <section id="section2"></section>
+  </article>
+  -->
+ </div>
+ 
+ 
+ 
+ <footer id="footer" role="contentinfo">
+  <hr>
+  <div class="contacts clearfix">
+   <h3>Equal Experts <i>Do more. With less.</i></h3>   <p class="copyright">Copyright 2005-12 &copy; Equal Experts.</p>
+   <aside class="uk">
+    <h4>United Kingdom</h4>
+    <ul>
+     <li class="tel"><a href="tel:+44-203-603-7830" title="Call Equal Experts UK">+44 (0)203 603 7830</a></li>
+     <li class="email"><a href="mailto:info@equalexperts.com" title="Email Equal Experts UK">info@equalexperts.com</a></li>
+     <li class="adr">Hamilton House, Mabledon Place<br> London, WC1H 9BB.</li>
+    </ul>
+   </aside>
+   <aside class="india">
+    <h4>India</h4>
+    <ul>
+     <li class="tel"><a href="tel:+91 20 6607 7763" title="Call Equal Experts India">+91 20 6607 7763</a></li>
+     <li class="email"><a href="mailto:eeindia@equalexperts.com" title="Email Equal Experts India">eeindia@equalexperts.com</a></li>
+     <li class="adr">Cerebrum IT Park No. B3, Kumar City<br> Pune, 411006.</li>
+    </ul>
+   </aside>
+   <aside class="social">
+    <ul>
+     <li class="linkedin"><a href="http://www.linkedin.com/company/equal-experts" title="Equal Experts on LinkedIn">LinkedIn</a></li>
+     <li class="twitter"><a href="http://www.twitter.com/equalexperts" title="Equal Experts on Twitter">Twitter</a></li>
+     <!-- <li class="youtube"><a href="#" title="#">YouTube</a></li> -->
+    </ul>
+   </aside>    
+  </div>
+ 
+ </footer>
+ 
+ <!-- Scripts
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+ <script>!window.jQuery && document.write('<script src="/asset/scripts/jquery-1.7.1.min.js"><\/script>')</script> -->
+ 
+</body>
+</html>
+  

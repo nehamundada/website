@@ -1,0 +1,213 @@
+ <!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+ <!-- Load typekit font in async way -->
+ <script type="text/javascript">
+  TypekitConfig = {
+    kitId: 'tah8ljg'
+  };
+  (function() {
+    var tk = document.createElement('script');
+    tk.src = '//use.typekit.com/' + TypekitConfig.kitId + '.js';
+    tk.type = 'text/javascript';
+    tk.async = 'true';
+    tk.onload = tk.onreadystatechange = function() {
+      var rs = this.readyState;
+      if (rs && rs != 'complete' && rs != 'loaded') return;
+      try { Typekit.load(TypekitConfig); } catch (e) {}
+    };
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(tk, s);
+  })();
+</script>
+<meta charset="utf-8">
+ <meta name="description" content="Do more. With less. We deliver great software, built by great people.">
+ <meta name="keywords" content="">
+ <meta name="author" content="Equal Experts">
+ <!--<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">-->
+ <title>Equal Experts | Do more. With less.</title>
+ <link rel="stylesheet" media="all" href="/asset/styles/styles.css">
+ <link rel="shortcut icon" href="/asset/images/favicon.png">
+ <link rel="apple-touch-icon-precomposed" href="/asset/images/favicon-apple.png">
+ <!--[if IE]>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <![endif]-->
+
+<!-- 
+ <script type="text/javascript" src="http://use.typekit.com/tah8ljg.js"></script>
+ <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+-->
+ <script src="/asset/scripts/jquery.min.js"></script>
+ <script src="/asset/scripts/jquery.form.min.js"></script>
+ <script src="/asset/scripts/join-network.js"></script>
+ 
+ 
+ <!-- Google analytics code -->
+ <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29757748-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+ <body id="network">
+ <header id="banner">
+  <div class="inner clearfix">
+   <strong>
+    <a href="http://equalexperts.com" title="Return to homepage" rel="home"><img src="/asset/images/logo.png" alt="Equal Experts"></a>
+   </strong>
+   <nav role="navigation">
+    <ul>
+     <li><a href="/" title="Homepage">Home</a></li>
+     <li><a href="/about" title="About us">About us</a></li> 
+     <li><a href="/casestudies" title="Case studies">Case studies</a></li>
+     <li><a href="/events" title="Events">Events</a></li>
+     <li class="active"><a href="/ournetwork" title="Our network"><b>Our network</b></a></li>
+     <li><a href="/contact" title="Contact">Contact</a></li>
+    </ul>
+   </nav>
+   </div>
+ </header>
+ <div id="content" class="clearfix" role="main">
+  <header>
+	
+   <h1>Our network</h1>
+   <p class="intro">We work with some of the most experienced people in the industry. We don't compromise.</p>
+</header>
+  
+  <div class="column-main">
+   <h2>About our network</h2>
+   <section class="aboutnetwork">
+    <p>It's <b>hard</b> to find <i>good</i> software development talent.</p>
+    <p>In the UK, most great software developers want control of their own destiny, which tends to lead them into contracting. We have embraced this trend and built a network from some of the best programmers, QAs, scrum masters and business analysts available. The people in our network each bring many years of experience of software development.</p> 
+    <p>We have a diverse and inspirational collection of people who speak at conferences, write books, run open source projects, and have deep experience in many business domains and technologies.</p>
+   </section>
+   
+  </div>
+    
+  <div class="column-secondary">
+   
+   
+   <h2>Join our network. Interested?</h2>
+   <form id="form" name="joinfrom"  class="form" >
+    <fieldset>
+	 <legend>Contact form</legend>
+	 <div>
+	  <p>
+	  	<input id="joinform-ourNetwork" name="source"  value="joinNetwork" type="hidden"/>
+	   <label for="joinform-name">Your name</label>
+	   <img src="/asset/images/icon-requiredfield.png" alt="Required field" class="requiredfield">
+	  </p>
+	  <input id="joinform-name" name="name" type="text" onblur="clearFieldError(this)">
+	 </div>
+	 <div>
+ 	  <p>
+	   <label for="joinform-email">Email address</label>
+	   <img src="/asset/images/icon-requiredfield.png" alt="Required field" class="requiredfield">
+	  </p>
+	  <input id="joinform-email" name="email" type="text" onblur="clearFieldError(this)">
+	 </div>
+	 <div>
+ 	  <p>
+	   <label for="joinform-expertise">Area of expertise</label>
+	   <img src="/asset/images/icon-requiredfield.png" alt="Required field" class="requiredfield">
+	  </p>
+	  <input id="joinform-expertise" name="message" type="text" onblur="clearFieldError(this)">
+	 </div>
+	 <div>
+	 	  	<p>
+		   	<label for="joinform-tel">Contact number</label>
+		  	</p>
+		  	<input id="joinform-tel" name="joinform-tel" type="text">
+	 </div>
+	 <div>
+           <p>
+           <label for="joinform-who">Do you know someone in the network?</label>
+          </p>
+          <input id="joinform-who" name="joinform-who" type="text" onblur="clearFieldError(this)">
+     </div>
+	 
+	  <div>
+          <p>
+	           <label for="joinform-cv">Upload your CV (pdf, doc, docx, odt)</label>
+          </p>
+	  	 
+          <input id="joinform-cv" name="joinform-cv" type="file" value="" style="font-size: 11px" onblur="clearFieldError(this)">
+     </div>
+	 
+	 <!--div>
+           <p>
+           <label for="math-challenge">Please answer this simple math question.</label>
+          </p>
+          <label id="firstNumber">num1</label> + <label id="secondNumber">num2</label>=<input class="mathAnswer" id="math-answer" name="math-answer" type="text" onblur="clearFieldError(this)">
+     </div-->
+     	 
+<!-- 	 	<input class="submit" type="button"  value="Say hello!" onclick="submitJoinNetworkForm()" > -->
+	
+	<input class="submit" type="button"  value="Say hello!"  onclick="submitForm()" >
+	</fieldset>
+   </form>
+  </div>
+  
+
+  <!-- 
+  <article id="article">
+   <section id="section1"></section>
+   <section id="section2"></section>
+  </article>
+  -->
+ </div>
+ 
+ 
+ 
+ <footer id="footer" role="contentinfo">
+  <hr>
+  <div class="contacts clearfix">
+   <h3>Equal Experts <i>Do more. With less.</i></h3>   <p class="copyright">Copyright 2005-12 &copy; Equal Experts.</p>
+   <aside class="uk">
+    <h4>United Kingdom</h4>
+    <ul>
+     <li class="tel"><a href="tel:+44-203-603-7830" title="Call Equal Experts UK">+44 (0)203 603 7830</a></li>
+     <li class="email"><a href="mailto:info@equalexperts.com" title="Email Equal Experts UK">info@equalexperts.com</a></li>
+     <li class="adr">Hamilton House, Mabledon Place<br> London, WC1H 9BB.</li>
+    </ul>
+   </aside>
+   <aside class="india">
+    <h4>India</h4>
+    <ul>
+     <li class="tel"><a href="tel:+91 20 6607 7763" title="Call Equal Experts India">+91 20 6607 7763</a></li>
+     <li class="email"><a href="mailto:eeindia@equalexperts.com" title="Email Equal Experts India">eeindia@equalexperts.com</a></li>
+     <li class="adr">Cerebrum IT Park No. B3, Kumar City<br> Pune, 411006.</li>
+    </ul>
+   </aside>
+   <aside class="social">
+    <ul>
+     <li class="linkedin"><a href="http://www.linkedin.com/company/equal-experts" title="Equal Experts on LinkedIn">LinkedIn</a></li>
+     <li class="twitter"><a href="http://www.twitter.com/equalexperts" title="Equal Experts on Twitter">Twitter</a></li>
+     <!-- <li class="youtube"><a href="#" title="#">YouTube</a></li> -->
+    </ul>
+   </aside>    
+  </div>
+ 
+ </footer>
+ 
+ <!-- Scripts
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+ <script>!window.jQuery && document.write('<script src="/asset/scripts/jquery-1.7.1.min.js"><\/script>')</script> -->
+ 
+</body>
+</html>

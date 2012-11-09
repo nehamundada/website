@@ -1,0 +1,284 @@
+ <!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+ <!-- Load typekit font in async way -->
+ <script type="text/javascript">
+  TypekitConfig = {
+    kitId: 'tah8ljg'
+  };
+  (function() {
+    var tk = document.createElement('script');
+    tk.src = '//use.typekit.com/' + TypekitConfig.kitId + '.js';
+    tk.type = 'text/javascript';
+    tk.async = 'true';
+    tk.onload = tk.onreadystatechange = function() {
+      var rs = this.readyState;
+      if (rs && rs != 'complete' && rs != 'loaded') return;
+      try { Typekit.load(TypekitConfig); } catch (e) {}
+    };
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(tk, s);
+  })();
+</script>
+<meta charset="utf-8">
+ <meta name="description" content="Do more. With less. We deliver great software, built by great people.">
+ <meta name="keywords" content="">
+ <meta name="author" content="Equal Experts">
+ <!--<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">-->
+ <title>Equal Experts | Do more. With less.</title>
+ <link rel="stylesheet" media="all" href="/asset/styles/styles.css">
+ <link rel="shortcut icon" href="/asset/images/favicon.png">
+ <link rel="apple-touch-icon-precomposed" href="/asset/images/favicon-apple.png">
+ <!--[if IE]>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <![endif]-->
+
+<!-- 
+ <script type="text/javascript" src="http://use.typekit.com/tah8ljg.js"></script>
+ <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+-->
+ <script src="/asset/scripts/jquery.min.js"></script>
+ <script src="/asset/scripts/jquery.form.min.js"></script>
+ <script src="/asset/scripts/join-network.js"></script>
+ 
+ 
+ <!-- Google analytics code -->
+ <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29757748-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+ <body id="home">
+ <header id="banner">
+  <div class="inner clearfix">
+   <strong>
+    <a href="http://equalexperts.com" title="Return to homepage" rel="home"><img src="/asset/images/logo.png" alt="Equal Experts"></a>
+   </strong>
+   <nav role="navigation">
+    <ul>
+     <li class="active"><a href="/" title="Homepage"><b>Home</b></a></li>
+     <li><a href="/about" title="About us">About us</a></li> 
+     <li><a href="/casestudies" title="Case studies">Case studies</a></li>
+     <li><a href="/events" title="Events">Events</a></li>
+     <li><a href="/ournetwork" title="Our network">Our network</a></li>
+     <li><a href="/contact" title="Contact">Contact</a></li>
+    </ul>
+   </nav>
+   </div>
+ </header>
+ <div id="content" class="clearfix" role="main">
+    <header>
+   <h1>Equal Experts blog</h1>   
+  </header>
+
+
+  <div class="column-main"> 
+   <article class="blogentry">
+    <h2>Using Kanban to manage a large portfolio of projects</h2>
+	<p class="blogdate">03 May 2012</p>
+	
+	
+	<section class="blogarticle">
+	 <p>I am working in the technology group of a large, multinational financial company. We work with other business groups within the firm to deliver projects varying in size from very small (e.g. a straightforward content update to the company website) to very large (e.g. implementing a set of new features that impact customer operations, security, compliance, etc.).</p>
+
+<p>It&#8217;s difficult to understand - especially as a newcomer - everything that we as a group are responsible for. Commonplace questions include:</p>
+
+<ul>
+<li>how do I know whether a project is in progress or waiting to start?</li>
+
+<li>which projects are at risk?</li>
+
+<li>what are we doing next and do we have capacity to do so?</li>
+</ul>
+
+<p>Historically, the team used a Powerpoint template to document project updates, risks, issues and changes to the project pipeline. This is not the optimal way of sharing and communicating this information since it:</p>
+
+<ol>
+<li>lacks visibility - it is not widely available to everyone the group</li>
+
+<li>requires effort to interpret - it is difficult to quickly find out whether a project is at risk for example</li>
+
+<li>lacks detail in key areas - it shows the pipeline as a list but doesn&#8217;t identify type, requested by, etc.</li>
+</ol>
+
+<p>Following further discussion with the head of the group, we agreed that setting up a project portfolio board based on some <strong>Kanban</strong> principles could help address these issues as part of a wider effort to improve our effectiveness at delivering projects.</p>
+
+<h2 id='what_we_did'>What we did</h2>
+
+<p>Standing in front of an empty whiteboard we answered the following questions:</p>
+
+<ol>
+<li>What types of work are we asked to do?</li>
+
+<li>Who asks us to do this work?</li>
+
+<li>When do we get involved? When do we consider our work done?</li>
+
+<li>How do we progress this work from start to end?</li>
+</ol>
+
+<h3 id='work_types'>Work Types</h3>
+
+<p>We decided to differentiate work based on 3 <strong>project types</strong>: i) business-as-usual tasks, ii) small-scale enhancements and iii) larger projects. We manage each type differently (larger products have stricter budgetary contraints compared to business-as-usual tasks for example) so there is benefit in visualising this on the board.</p>
+
+<h3 id='sources_of_work'>Sources of Work</h3>
+
+<p>We agreed that highlighting where work originates was also a useful metric. We narrowed this down to 4 sources: 3 separate business groups and 1 catch-all bucket for requests originating from the technology group itself and/or requests affecting the company as a whole.</p>
+
+<h3 id='defining_the_start__end_points_of_the_process'>Defining the start &amp; end points of the process</h3>
+
+<p>We discussed this at length. Should we start with approved projects only or with informal requests for work? Do we consider a project we deploy to production as completed or are there additional steps we need to check?</p>
+
+<p>We decided that our start point is when we find out about an idea for a project exists rather than approved projects. This should allow us to be more adaptive to changes in priorities since a quick approval won&#8217;t be a surprise. Our end point is the training and monitoring we need to provide for some projects (<em>note</em>, I initially thought that successfully deploying into production represented a completed project but further discussion amongst the group highlighted this last important step).</p>
+
+<h3 id='what_does_our_process_look_like'>What does our process look like?</h3>
+
+<p>We iterated through 2 or 3 different versions until we settled on this one (for now - we&#8217;ll review how well this is working and revise as appropriate).</p>
+
+<p><img src='./board1.png' alt='Description' /></p>
+
+<ul>
+<li>Backlog (queue) - a holding pen for project ideas that require further thought/analysis/sign off</li>
+
+<li>Proposal (active) - projects in this stage are undergoing analysis or waiting for official sign off to begin</li>
+
+<li>Ready for Development (queue) - projects here are signed off and ready to pull into development</li>
+
+<li>In Development (active)</li>
+
+<li>In QA (active) - projects here are undergoing formal QA</li>
+
+<li>Ready for Release (queue) - projects waiting to be included in the next release</li>
+
+<li>Released (completed)</li>
+
+<li>Training &amp; Monitoring (active)</li>
+</ul>
+
+<p>We didn&#8217;t add a buffer between the In Development and In QA stages. We&#8217;ll review whether we need in the future.</p>
+
+<p>We added 4 horizontal swimlanes per source of work (see point 2 above) so that we can easily see the distribution of work between each source.</p>
+
+<p><img src='./board2.png' alt='Description' /></p>
+
+<p>We chose to use different colour cards per work type (see point 1) and opted to capture the following information.</p>
+
+<p><img src='./cardlayout1.png' alt='Card Layout' /></p>
+
+<p>Here&#8217;s an example:</p>
+
+<p><img src='./cardlayout2.png' alt='Card Layout' /></p>
+
+<h2 id='what_happened_next'>What happened next?</h2>
+
+<h3 id='board_setup'>Board setup</h3>
+
+<p>A quick and easy 10 minute task using a whiteboard (wall space is a premium in this office :-), ruler and marker. Following this, we added 1 card per project into the appropriate column on the board.</p>
+
+<h2 id='results'>Results</h2>
+
+<p>A couple of immediate observations: one project manager is responsible for many more projects than other PMs and - unexpectedly - we have no work in progress for one of the business groups and nothing pending in the pipeline.</p>
+
+<p>So, how does this setup help us address the problems I mentioned earlier? The board allows us to quickly <strong>see a project&#8217;s state</strong> by look at the column the card is in. It&#8217;s accessible to everyone in the office and is practically self-explanatory. We <strong>see all upcoming projects</strong> and <strong>who&#8217;s requested them</strong> by looking at the distrubution of cards in the backlog queue. We indicate that a <strong>project is at risk</strong> by putting a pink sticky note on the card with details of the problem and who owns it. To <strong>find out more about a project</strong>, you can quickly determine its ID, budget, requesting business group, PM and target release date by looking the corresponding card and position on the board.</p>
+
+<p>We need to do some additional investigation to determine how we use the board to help with <strong>capacity planning</strong>. We also want to answer these questions:</p>
+
+<ul>
+<li>how should we inspect/adapt this setup to see what works/doesn&#8217;t work (e.g. will adding limits to some stages of the process help)?</li>
+
+<li>how do we make more use of the board during team meetings?</li>
+
+<li>how do we make the board visible to our colleagues outside of the main office?</li>
+</ul>
+<hr />
+<p>Post by <a href='http://twitter.com/rhyd'>Rhyd Lewis.</a></p>
+
+<p>Rhyd is an enthusiastic Project Manager with over 10 years’ experience helping teams deliver great software. He enjoys working with clients to help them solve problems by making communication more effective, reducing complexity and delivering quality work as rapidly as possible.</p>
+    </section>
+   </article>
+  </div>
+      
+  <div class="column-secondary featuredclients">
+ <h2>Featured <a href="/casestudies/" title="Equal Experts clients"><b>clients</b></a></h2>
+ <section>
+	<p><img src="/asset/images/client-o2.png" alt="O2"></p>
+	<p>O2 is a dynamic, well loved brand and a pleasure to work with. Over our time with O2 we have delivered a number of projects. The highest profile of which was their innovative mobile offers product, Priority Moments.</p>
+	<p><a href="/casestudies/" title="O2 case study">Learn more</a></p>
+ </section>
+ <section>
+	<p><img src="/asset/images/client-rightmove.png" alt="Rightmove"></p>
+	<p>EqualExperts were commissioned to develop Rightmove's iPad application to coincide with the launch of the iPad in the UK. With five weeks to deliver from start to finish this was a fast paced, high energy project!</p>
+  <p><a href="/casestudies/" title="Rightmove case study">Learn more</a></p>
+ </section>
+ <section>
+	<p><img src="/asset/images/client-tieto.png" alt="Tieto"></p>
+	<p>By combining our enterprise-friendly agile approach, project leadership and technical expertise with Tieto's unique domain knowledge, we were able to go from a clean sheet of paper to the beta release of the system in 18 months and 12,000 man-days, whilst constantly adapting to the changing market conditions.</p>
+  <p><a href="/casestudies/" title="Tieto case study">Learn more</a></p>
+ </section>   
+</div>
+ 
+
+  <!-- 
+  <article id="article">
+   <section id="section1"></section>
+   <section id="section2"></section>
+  </article>
+  -->
+ </div>
+ 
+ 
+ 
+ <footer id="footer" role="contentinfo">
+  <hr>
+  <div class="contacts clearfix">
+   <h3>Equal Experts <i>Do more. With less.</i></h3>   <p class="copyright">Copyright 2005-12 &copy; Equal Experts.</p>
+   <aside class="uk">
+    <h4>United Kingdom</h4>
+    <ul>
+     <li class="tel"><a href="tel:+44-203-603-7830" title="Call Equal Experts UK">+44 (0)203 603 7830</a></li>
+     <li class="email"><a href="mailto:info@equalexperts.com" title="Email Equal Experts UK">info@equalexperts.com</a></li>
+     <li class="adr">Hamilton House, Mabledon Place<br> London, WC1H 9BB.</li>
+    </ul>
+   </aside>
+   <aside class="india">
+    <h4>India</h4>
+    <ul>
+     <li class="tel"><a href="tel:+91 20 6607 7763" title="Call Equal Experts India">+91 20 6607 7763</a></li>
+     <li class="email"><a href="mailto:eeindia@equalexperts.com" title="Email Equal Experts India">eeindia@equalexperts.com</a></li>
+     <li class="adr">Cerebrum IT Park No. B3, Kumar City<br> Pune, 411006.</li>
+    </ul>
+   </aside>
+   <aside class="social">
+    <ul>
+     <li class="linkedin"><a href="http://www.linkedin.com/company/equal-experts" title="Equal Experts on LinkedIn">LinkedIn</a></li>
+     <li class="twitter"><a href="http://www.twitter.com/equalexperts" title="Equal Experts on Twitter">Twitter</a></li>
+     <!-- <li class="youtube"><a href="#" title="#">YouTube</a></li> -->
+    </ul>
+   </aside>    
+  </div>
+ 
+ </footer>
+ 
+ <!-- Scripts
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+ <script>!window.jQuery && document.write('<script src="/asset/scripts/jquery-1.7.1.min.js"><\/script>')</script> -->
+ 
+</body>
+</html>
+  

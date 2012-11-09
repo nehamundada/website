@@ -1,0 +1,8 @@
+---
+layout: post
+title: CodeKen 2011
+category: events
+date: 14 Nov 2011
+location: London
+summary: Equal Experts and CodeKen mounted a rescue mission for the cancelled DevDays London conference.<br><a href="http://codeken.com/codeken-2011/">Conference site</a>
+---

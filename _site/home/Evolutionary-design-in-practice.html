@@ -1,0 +1,196 @@
+ <!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+ <!-- Load typekit font in async way -->
+ <script type="text/javascript">
+  TypekitConfig = {
+    kitId: 'tah8ljg'
+  };
+  (function() {
+    var tk = document.createElement('script');
+    tk.src = '//use.typekit.com/' + TypekitConfig.kitId + '.js';
+    tk.type = 'text/javascript';
+    tk.async = 'true';
+    tk.onload = tk.onreadystatechange = function() {
+      var rs = this.readyState;
+      if (rs && rs != 'complete' && rs != 'loaded') return;
+      try { Typekit.load(TypekitConfig); } catch (e) {}
+    };
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(tk, s);
+  })();
+</script>
+<meta charset="utf-8">
+ <meta name="description" content="Do more. With less. We deliver great software, built by great people.">
+ <meta name="keywords" content="">
+ <meta name="author" content="Equal Experts">
+ <!--<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">-->
+ <title>Equal Experts | Do more. With less.</title>
+ <link rel="stylesheet" media="all" href="/asset/styles/styles.css">
+ <link rel="shortcut icon" href="/asset/images/favicon.png">
+ <link rel="apple-touch-icon-precomposed" href="/asset/images/favicon-apple.png">
+ <!--[if IE]>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <![endif]-->
+
+<!-- 
+ <script type="text/javascript" src="http://use.typekit.com/tah8ljg.js"></script>
+ <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+-->
+ <script src="/asset/scripts/jquery.min.js"></script>
+ <script src="/asset/scripts/jquery.form.min.js"></script>
+ <script src="/asset/scripts/join-network.js"></script>
+ 
+ 
+ <!-- Google analytics code -->
+ <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29757748-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+ <body id="home">
+ <header id="banner">
+  <div class="inner clearfix">
+   <strong>
+    <a href="http://equalexperts.com" title="Return to homepage" rel="home"><img src="/asset/images/logo.png" alt="Equal Experts"></a>
+   </strong>
+   <nav role="navigation">
+    <ul>
+     <li class="active"><a href="/" title="Homepage"><b>Home</b></a></li>
+     <li><a href="/about" title="About us">About us</a></li> 
+     <li><a href="/casestudies" title="Case studies">Case studies</a></li>
+     <li><a href="/events" title="Events">Events</a></li>
+     <li><a href="/ournetwork" title="Our network">Our network</a></li>
+     <li><a href="/contact" title="Contact">Contact</a></li>
+    </ul>
+   </nav>
+   </div>
+ </header>
+ <div id="content" class="clearfix" role="main">
+    <header>
+   <h1>Equal Experts blog</h1>   
+  </header>
+
+
+  <div class="column-main"> 
+   <article class="blogentry">
+    <h2>Evolutionary design in practice</h2>
+	<p class="blogdate">12 February 2012</p>
+	
+	
+	<section class="blogarticle">
+	 <p>A common practice on most software development projects is to start with a lengthy tool choice process to make sure the right technologies are employed for the requirements of the project. In practice we find this process can be time consuming and often leads teams down the wrong path as they consider requirements that might materialise in the future. Instead we prefer to pick a set of tools that the team is familiar with that is likely to do the job, and then adapt as requirements become concrete.</p>
+
+<p><strong>The Project</strong></p>
+
+<p>We recently had a concrete example of this approach working on a project to produce an online, agent specific, mobile phone shop that interacts with an existing JSON REST API for product information, a basket API and an ordering service. The shop is expected to have a rich UI with multiple widgets on the page, interacting with the back end services to populate a basket with the items being purchased, then checked out.</p>
+
+<p><strong>The Initial Architecture</strong></p>
+
+<p>We chose to have a light java server application, using <a href='http://jersey.java.net/'>Jersey</a>, and a <a href='http://coffeescript.org/'>CoffeeScript</a>/HTML front end. We wanted to just proxy calls through the server, to the existing REST apis, leaving the majority of the code in CoffeeScript. Because <a href='http://json.org/'>JSON</a> is very easy to consume and produce within CoffeeScript, we decided that we really didn&#8217;t need a separate server side component to process or manipulate the the JSON being returned from the existing apis. From previous experience, we had found that manipulating JSON in Java was an overly verbose and tedious process, so we expected significant productivity gains from our approach.</p>
+
+<p>In the very early stages of the project, this approach worked pretty well. The tools for writing TDD CoffeeScript were working nicely, and the app took shape quickly. There were a few complications where we needed to make several calls to get all the data for a single UI component, or we had to traverse a number of links in the REST API before we got to the resource we needed to post to. This made the CoffeeScript messy, but we separated out the model and view components into separate classes to make it clearer.</p>
+
+<p><strong>The Point of Failure</strong></p>
+
+<p>As the complexity of the CoffeScript code grew, and the number of different views of the same data increased, we started to struggle with keeping a track of what shape of data was being passed to which component, and bugs started creeping in. With the need to walk a number of links to complete actions like adding items to a basket, the setup and mocks in the tests were getting out of hand.</p>
+
+<p>It was mostly the complex tests that were hurting us, but this is a common symptom of overly complex code with poor separation of concerns. In order to simplify things, we decided we really needed controllers to call the various REST APIs, walk the links and return data that was the right shape for the widgets on the page. After much discussion, we decided that ideally we would like to handle this data manipulation server side, thereby making the server code more than just a proxy. The problem we had to overcome was how to make the server side code simple. Having used Java to manipulate JSON before, we weren&#8217;t keen to repeat the experience. Ideally we wanted the JSON to be marshalled into strongly typed objects rather than lists and maps. This would remove any confusion over the shape of data a particular component was dealing with.</p>
+
+<p><strong>The Architectural Shift</strong></p>
+
+<p>Having a few members of the team that had used <a href='http://scala-lang.org/'>Scala</a> before, we decided to look into using Scala for our server. After some investigation, we discovered that with a few tweaks, we could use the <a href='http://github.com/codahale/jerkson'>Jerkson</a> JSON library, which follows the Scala <a href='http://artima.com/weblogs/viewpost.jsp?thread=179766'>Pimp my library approach</a> of taking a good existing Java library <a href='http://jackson.codehaus.org/'>Jackson</a>, and making it more Scala friendly. We could then create case classes for each of our JSON responses, which are very terse but clear. The nice addition of having to declare nullable fields as Options is a great feature, making the whole null checking problem much easier. Couple that with Scala&#8217;s collections APIs which make filtering, sorting and iterating over collections very concise, and the data manipulation became clear and simple to follow.</p>
+
+<p>With the controller being server side, we achieved a one to one data model to widget relationship. The CoffeeScript classes were able to be significantly simplified, and the tests became much easier and clearer. While the project isn&#8217;t finished yet, we are much more confident, and are now able to develop new functionality faster.</p>
+
+<p>Post by <a href='http://twitter.com/pyruby'>Chris Tarttelin.</a></p>
+
+<p>Chris has been a developer for over 15 years. He specialises in identifying the real business value, and providing simple solutions to deliver that value. &#8221;I&#8217;m a geek and just want to keep writing great, simple software to solve big complex problems&#8221;. He is one of the many associates that works with Equal Experts to help build great software.</p>
+    </section>
+   </article>
+  </div>
+      
+  <div class="column-secondary featuredclients">
+ <h2>Featured <a href="/casestudies/" title="Equal Experts clients"><b>clients</b></a></h2>
+ <section>
+	<p><img src="/asset/images/client-o2.png" alt="O2"></p>
+	<p>O2 is a dynamic, well loved brand and a pleasure to work with. Over our time with O2 we have delivered a number of projects. The highest profile of which was their innovative mobile offers product, Priority Moments.</p>
+	<p><a href="/casestudies/" title="O2 case study">Learn more</a></p>
+ </section>
+ <section>
+	<p><img src="/asset/images/client-rightmove.png" alt="Rightmove"></p>
+	<p>EqualExperts were commissioned to develop Rightmove's iPad application to coincide with the launch of the iPad in the UK. With five weeks to deliver from start to finish this was a fast paced, high energy project!</p>
+  <p><a href="/casestudies/" title="Rightmove case study">Learn more</a></p>
+ </section>
+ <section>
+	<p><img src="/asset/images/client-tieto.png" alt="Tieto"></p>
+	<p>By combining our enterprise-friendly agile approach, project leadership and technical expertise with Tieto's unique domain knowledge, we were able to go from a clean sheet of paper to the beta release of the system in 18 months and 12,000 man-days, whilst constantly adapting to the changing market conditions.</p>
+  <p><a href="/casestudies/" title="Tieto case study">Learn more</a></p>
+ </section>   
+</div>
+ 
+
+  <!-- 
+  <article id="article">
+   <section id="section1"></section>
+   <section id="section2"></section>
+  </article>
+  -->
+ </div>
+ 
+ 
+ 
+ <footer id="footer" role="contentinfo">
+  <hr>
+  <div class="contacts clearfix">
+   <h3>Equal Experts <i>Do more. With less.</i></h3>   <p class="copyright">Copyright 2005-12 &copy; Equal Experts.</p>
+   <aside class="uk">
+    <h4>United Kingdom</h4>
+    <ul>
+     <li class="tel"><a href="tel:+44-203-603-7830" title="Call Equal Experts UK">+44 (0)203 603 7830</a></li>
+     <li class="email"><a href="mailto:info@equalexperts.com" title="Email Equal Experts UK">info@equalexperts.com</a></li>
+     <li class="adr">Hamilton House, Mabledon Place<br> London, WC1H 9BB.</li>
+    </ul>
+   </aside>
+   <aside class="india">
+    <h4>India</h4>
+    <ul>
+     <li class="tel"><a href="tel:+91 20 6607 7763" title="Call Equal Experts India">+91 20 6607 7763</a></li>
+     <li class="email"><a href="mailto:eeindia@equalexperts.com" title="Email Equal Experts India">eeindia@equalexperts.com</a></li>
+     <li class="adr">Cerebrum IT Park No. B3, Kumar City<br> Pune, 411006.</li>
+    </ul>
+   </aside>
+   <aside class="social">
+    <ul>
+     <li class="linkedin"><a href="http://www.linkedin.com/company/equal-experts" title="Equal Experts on LinkedIn">LinkedIn</a></li>
+     <li class="twitter"><a href="http://www.twitter.com/equalexperts" title="Equal Experts on Twitter">Twitter</a></li>
+     <!-- <li class="youtube"><a href="#" title="#">YouTube</a></li> -->
+    </ul>
+   </aside>    
+  </div>
+ 
+ </footer>
+ 
+ <!-- Scripts
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+ <script>!window.jQuery && document.write('<script src="/asset/scripts/jquery-1.7.1.min.js"><\/script>')</script> -->
+ 
+</body>
+</html>
+  

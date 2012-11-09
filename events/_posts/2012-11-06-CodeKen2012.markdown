@@ -1,0 +1,14 @@
+---
+layout: post
+title: CodeKen 2012
+category: events
+date: 06 Nov 2012
+location: Everywhere!
+summary: <a href="http://twitter.com/jonmdickinson">Jon Dickinson</a> organised <a href="http://codeken.com/codeken-2012">CodeKen 2012</a> an online social conference for passionate developers everywhere.
+---
+[CodeKen 2012](http://codeken.com/codeken-2012/) is the first purely online social conference for  software developers. Throughout the course of the day experts will present and broadcast live to a global audience on subjects as varied as HTML 5, Data Science, architecture and developer education.
+
+[Julian Browne](http://twitter.com/julianbrowne) will be presenting along with many other fantastic speakers. Attendees will use Google Hangouts to mingle and discuss the presentations between talks. [Jon Dickinson](http://twitter.com/jonmdickinson) is running the conference. We are excited to be a part of this event and look forward to catching up with you online at the conference. 
+
+[Find out all about the conference](http://codeken.com/codeken-2012) and [keep in touch with the conference here](http://codeken.com/codeken-2012/register.html).
+

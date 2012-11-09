@@ -1,0 +1,31 @@
+<project basedir="." name="EEWebsite" default="build">
+        <description>
+        Equal Experts website
+    </description>
+	
+	 <property name="apache.root" value="/var/www/"/>
+	 
+        <target name="clean">
+		        <echo>
+		            Cleaning target directory
+		        </echo>
+                <delete file=".build/${ant.project.name}.zip" verbose="true"/>
+        </target>
+
+        <target name="build" depends="generateSite">
+			<zip destfile=".build/${ant.project.name}.zip" basedir="_site"/>
+		</target>
+		
+		<target name="generateSite" depends="clean">
+			<exec executable="jekyll">
+				<arg value="--no-server"/>
+			</exec>
+		</target>
+
+		<target name="deploy" depends="build">
+			<delete includeemptydirs="true" verbose="true">
+    				<fileset dir="${apache.root}" includes="**/*.*" defaultexcludes="false"/>
+			</delete>
+			<unzip src=".build/${ant.project.name}.zip" dest="${apache.root}"/>
+		</target>
+</project>

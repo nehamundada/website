@@ -1,0 +1,216 @@
+ <!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+ <!-- Load typekit font in async way -->
+ <script type="text/javascript">
+  TypekitConfig = {
+    kitId: 'tah8ljg'
+  };
+  (function() {
+    var tk = document.createElement('script');
+    tk.src = '//use.typekit.com/' + TypekitConfig.kitId + '.js';
+    tk.type = 'text/javascript';
+    tk.async = 'true';
+    tk.onload = tk.onreadystatechange = function() {
+      var rs = this.readyState;
+      if (rs && rs != 'complete' && rs != 'loaded') return;
+      try { Typekit.load(TypekitConfig); } catch (e) {}
+    };
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(tk, s);
+  })();
+</script>
+<meta charset="utf-8">
+ <meta name="description" content="Do more. With less. We deliver great software, built by great people.">
+ <meta name="keywords" content="">
+ <meta name="author" content="Equal Experts">
+ <!--<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">-->
+ <title>Equal Experts | Do more. With less.</title>
+ <link rel="stylesheet" media="all" href="/asset/styles/styles.css">
+ <link rel="shortcut icon" href="/asset/images/favicon.png">
+ <link rel="apple-touch-icon-precomposed" href="/asset/images/favicon-apple.png">
+ <!--[if IE]>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <![endif]-->
+
+<!-- 
+ <script type="text/javascript" src="http://use.typekit.com/tah8ljg.js"></script>
+ <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+-->
+ <script src="/asset/scripts/jquery.min.js"></script>
+ <script src="/asset/scripts/jquery.form.min.js"></script>
+ <script src="/asset/scripts/join-network.js"></script>
+ 
+ 
+ <!-- Google analytics code -->
+ <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29757748-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+ <body id="home">
+ <header id="banner">
+  <div class="inner clearfix">
+   <strong>
+    <a href="http://equalexperts.com" title="Return to homepage" rel="home"><img src="/asset/images/logo.png" alt="Equal Experts"></a>
+   </strong>
+   <nav role="navigation">
+    <ul>
+     <li class="active"><a href="/" title="Homepage"><b>Home</b></a></li>
+     <li><a href="/about" title="About us">About us</a></li> 
+     <li><a href="/casestudies" title="Case studies">Case studies</a></li>
+     <li><a href="/events" title="Events">Events</a></li>
+     <li><a href="/ournetwork" title="Our network">Our network</a></li>
+     <li><a href="/contact" title="Contact">Contact</a></li>
+    </ul>
+   </nav>
+   </div>
+ </header>
+ <div id="content" class="clearfix" role="main">
+    <header>
+   <h1>Equal Experts blog</h1>   
+  </header>
+
+
+  <div class="column-main"> 
+   <article class="blogentry">
+    <h2>Equal Experts MongoDB Lightning Talks</h2>
+	<p class="blogdate">31 May 2012</p>
+	
+	
+	<section class="blogarticle">
+	 <p><img src='/asset/images/logo_mongo.png' alt='MongoDB' /></p>
+
+<h2 id='realtime_analytics_with_mongodb'>Realtime analytics with MongoDB</h2>
+
+<p>First up was <a href='http://twitter.com/julianbrowne'>Julian Browne</a>. Julian talked about an experiment he is toying with to use <a href='http://nodejs.org'>node.js</a>, <a href='http://d3js.org'>D3.js</a> and <a href='http://mongodb.org'>MongoDB</a> for real-time analytics. He started with his inspiration for the experiment when he found <a href='http://hummingbirdstats.com/'>Hummingbird</a> a tool for real time web traffic visualisation. Julian had also been experimenting with various parts of MongoDB for his upcoming talk at the DeNormalised conference <a href='http://denormalised.com/denomormalised_conference_lond/'>Deep dive into MongoDB</a>, when he decided to find out what would happen when if he tailed a capped collection in MongoDB to provide the data for a real-time analytics in Node.js.</p>
+
+<p>Julian moved on to explaining capped collections and tailable cursors, showing how to create a MongoDB capped collection and then the code to tail it. Once that was covered we saw the demo running. Julian fired up the MongoDB instance, created the capped collection, then started Node.js and opened the demo page in his browser to open a web socket to the Node server and render the initial D3 chart. Then back to the terminal, and as Julian saved new documents to the collection the D3 chart could be seen automatically updating in the background. Then he fired off a script to run a large number of random updates to the collection and we could watch the chart respond and update in real time.</p>
+
+<p>Julian then went on to explain that the replication op log in MongoDB is also a capped collection so using the same technology stack, but with a different D3 visualisation Julian fired up a replica set and showed how easy it would be to monitor and visualise any updates to your MongoDB database in real time.</p>
+
+<p>All of the code for this talk, including the scripts for automatically setting up a local MongoDB replica set <a href='https://github.com/julianbrowne/rtsdemo'>can be found on github</a>.</p>
+
+<h2 id='modelling_and_validating_your_schema_in_mongodb'>Modelling and validating your schema in MongoDB</h2>
+
+<p>Next up it was <a href='http://twitter.com/pyruby'>Chris Tarttelin</a> to talk about schema modelling and validation in MongoDB. A couple of years ago Chris was working on a property listing product. They found that the business required new attributes to be added to properties frequently over time. These properties would be extremely important to a small number of properties, but completely irrelevant to the majority. A classic example being distanceFromVolcano, not so important in New York, more so in Hawaii.</p>
+
+<p>After a while Chris got fed up of telling his customer, &#8220;It will take 3 days to add a new column to the database&#8221;, due to the hoop jumping that was necessary to get a schema change made. While thinking on this problem Chris experienced a moment of enlightenment at PyCon 2010. We have a REST API talking JSON and here is MongoDB that talks JSON. Why not put them together? You&#8217;ll be pleased to know it all ended well and the rest is history.</p>
+
+<p>One of the main arguments that they came up against with DBAs was how do we control the schema? This seems to be a recurring theme as the same questions came up a year later on a different project. It turns out there is a draft <a href='http://json-schema.org/'>JSON schema</a> specification, although there wasn&#8217;t a well maintained Java implementation available at the time. So Sean (coming later) and Chris decided to build one. The result is a <a href='https://github.com/EqualExperts/json-schema-validator'>JSON schema validator</a> that is on github and can be used now.</p>
+
+<h2 id='agile_development_with_mongodb'>Agile development with MongoDB</h2>
+
+<p><a href='http://twitter.com/seanjreilly'>Sean Reilly</a> talked about automated testing of applications using MongoDB. He started of by talking about what we test in MongoDB. For example write concerns, unique indexes, documents persisted, queries return the right objects, versioning strategies implemented correctly.</p>
+
+<p>Sean went step by step through the approach that he developed to make automated testing of the parts of the application that use MongoDB simple and efficient. He also covered some approaches that didn&#8217;t work so well so you can learn from our experience of using this approach for over a year now.</p>
+
+<p>In summary, here are a couple of tips from the end of the presentation to get you started:</p>
+
+<h3 id='if_you_use_a_shared_mongodb_server_for_unit_tests'>If you use a shared MongoDB server for unit tests</h3>
+
+<ul>
+<li>Use &#8211;smallfiles for a unit test server</li>
+
+<li>Increase file handles for connections</li>
+</ul>
+
+<p>Also Alvin Richards mentioned that you could use &#8211;noprealloc to disable data file preallocation, which would help when creating a new database for each test run.</p>
+
+<h3 id='if_everyone_has_their_own_server'>If everyone has their own server</h3>
+
+<ul>
+<li>CI server also needs to have a Mongo instance.</li>
+
+<li>If you are using Jenkins, use the MongoDB plugin.</li>
+</ul>
+
+<p>Sean went on to walk through some code examples afterwards to show the patterns in practice. You can <a href='/asset/other/TestingMongoDB.pdf'>download Sean&#8217;s presentation</a> now.</p>
+    </section>
+   </article>
+  </div>
+      
+  <div class="column-secondary featuredclients">
+ <h2>Featured <a href="/casestudies/" title="Equal Experts clients"><b>clients</b></a></h2>
+ <section>
+	<p><img src="/asset/images/client-o2.png" alt="O2"></p>
+	<p>O2 is a dynamic, well loved brand and a pleasure to work with. Over our time with O2 we have delivered a number of projects. The highest profile of which was their innovative mobile offers product, Priority Moments.</p>
+	<p><a href="/casestudies/" title="O2 case study">Learn more</a></p>
+ </section>
+ <section>
+	<p><img src="/asset/images/client-rightmove.png" alt="Rightmove"></p>
+	<p>EqualExperts were commissioned to develop Rightmove's iPad application to coincide with the launch of the iPad in the UK. With five weeks to deliver from start to finish this was a fast paced, high energy project!</p>
+  <p><a href="/casestudies/" title="Rightmove case study">Learn more</a></p>
+ </section>
+ <section>
+	<p><img src="/asset/images/client-tieto.png" alt="Tieto"></p>
+	<p>By combining our enterprise-friendly agile approach, project leadership and technical expertise with Tieto's unique domain knowledge, we were able to go from a clean sheet of paper to the beta release of the system in 18 months and 12,000 man-days, whilst constantly adapting to the changing market conditions.</p>
+  <p><a href="/casestudies/" title="Tieto case study">Learn more</a></p>
+ </section>   
+</div>
+ 
+
+  <!-- 
+  <article id="article">
+   <section id="section1"></section>
+   <section id="section2"></section>
+  </article>
+  -->
+ </div>
+ 
+ 
+ 
+ <footer id="footer" role="contentinfo">
+  <hr>
+  <div class="contacts clearfix">
+   <h3>Equal Experts <i>Do more. With less.</i></h3>   <p class="copyright">Copyright 2005-12 &copy; Equal Experts.</p>
+   <aside class="uk">
+    <h4>United Kingdom</h4>
+    <ul>
+     <li class="tel"><a href="tel:+44-203-603-7830" title="Call Equal Experts UK">+44 (0)203 603 7830</a></li>
+     <li class="email"><a href="mailto:info@equalexperts.com" title="Email Equal Experts UK">info@equalexperts.com</a></li>
+     <li class="adr">Hamilton House, Mabledon Place<br> London, WC1H 9BB.</li>
+    </ul>
+   </aside>
+   <aside class="india">
+    <h4>India</h4>
+    <ul>
+     <li class="tel"><a href="tel:+91 20 6607 7763" title="Call Equal Experts India">+91 20 6607 7763</a></li>
+     <li class="email"><a href="mailto:eeindia@equalexperts.com" title="Email Equal Experts India">eeindia@equalexperts.com</a></li>
+     <li class="adr">Cerebrum IT Park No. B3, Kumar City<br> Pune, 411006.</li>
+    </ul>
+   </aside>
+   <aside class="social">
+    <ul>
+     <li class="linkedin"><a href="http://www.linkedin.com/company/equal-experts" title="Equal Experts on LinkedIn">LinkedIn</a></li>
+     <li class="twitter"><a href="http://www.twitter.com/equalexperts" title="Equal Experts on Twitter">Twitter</a></li>
+     <!-- <li class="youtube"><a href="#" title="#">YouTube</a></li> -->
+    </ul>
+   </aside>    
+  </div>
+ 
+ </footer>
+ 
+ <!-- Scripts
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+ <script>!window.jQuery && document.write('<script src="/asset/scripts/jquery-1.7.1.min.js"><\/script>')</script> -->
+ 
+</body>
+</html>
+  

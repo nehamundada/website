@@ -1,0 +1,12 @@
+---
+layout: post
+date: 19 Mar 2012
+category: ournetwork
+author: Manish Shah 
+title: Long, complex title
+discipline: Director, Equal Experts
+imagePath: /asset/images/network-LastFirst02.jpg
+sourceUrl: http://google.co.za
+isArticle: true
+---
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

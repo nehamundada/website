@@ -1,0 +1,24 @@
+---
+layout: home
+category: home
+---
+ <header>
+   <h1>Equal Experts blog</h1>   
+  </header>
+
+  <div class="column-main">
+   <h2>Latest thoughts, hot off the press</h2>
+   {% for post in paginator.posts  %}
+		<section class="blogentry">
+	    <h3><a href="{{post.url}}" title="{{post.title}}">{{post.title}}</a></h3>
+		<p class="blogdate">{{ post.date | date: "%d %B %Y" }}</p>
+		
+		{% if post.imagePath %}
+			<p class="blogthumbnail"><img src="{{post.imagePath}}" height="80" width="80" alt="#"></p>
+		{% endif %}
+		<p class="blogsummary">{{post.summary}} <a href="{{post.url}}" title="{{post.title}}">Read full article</a></p>
+	   </section>
+   {% endfor %}
+  </div>
+      
+  {% include featured_clients.html %}

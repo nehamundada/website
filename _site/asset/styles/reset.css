@@ -1,0 +1,79 @@
+/* Equal Experts Stylesheet: reset.css, 2012.02.28 */
+
+/* 
+ hj Reset Stylesheet, 2012.02.20 
+ Thanks to HTML5 Doctor and HTML5 Reset for teaching and sharing:
+ - http://html5doctor.com/html-5-reset-stylesheet
+ - http://html5reset.org
+ */
+
+ 
+/* 
+ html5doctor.com Reset Stylesheet v1.6.1 (Modified)
+ Author: Richard Clark, 2010.09.17
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+ background:transparent;
+ border:0;
+ font-size:100%;
+ margin:0;
+ padding:0;
+ outline:0;
+ vertical-align:baseline;
+ }
+body {line-height:1;}
+h1,h2,h3,h4,h5,h6 {font-weight:normal;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display:block;}
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after {content:''; content:none;}
+a {background:transparent; font-size:100%; margin:0; padding:0; vertical-align:baseline;}
+ins {background-color:#fcd700; color:#000; text-decoration:none;}
+mark {background-color:#fcd700; color:#000; font-style:italic; font-weight:bold;}
+del {text-decoration: line-through;}
+abbr[title], dfn[title] {border-bottom:1px dotted; cursor:help;}
+hr {border:0; border-top:1px solid #cccccc; display:block; height:1px; margin:0 0 1em 0; padding:0;}
+input, select {vertical-align:middle;}
+
+
+/*
+ html5reset.org HTML5 Reset (Modified)
+ Author: Tim Murtaugh, 2011.06.23
+*/
+
+/* Accessible :focus, people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active {outline:none;}
+/* Forms, play nice */
+button {width:auto; overflow:visible;} /* viget.com/inspire/styling-the-button-element-in-internet-explorer */
+select,input,textarea {font: 99% sans-serif;}
+button,input,select,textarea {margin:0;} /* Webkit adds 2px margin outside the chrome of form elements */
+label,input[type=button],input[type=submit],button {cursor:pointer;} /* Hand-cursor for clickable elements */
+/* Tables, play nice */
+table {border-collapse:collapse; border-spacing:0; font-size:inherit; font:100%;}
+th {font-weight:bold; vertical-align:bottom;}
+td {font-weight:normal; vertical-align:top;}
+/* Content formatting */
+ul,li {list-style:none;}
+small {font-size: 85%;}
+strong {font-weight: bold;}
+pre,code,kbd,samp {font-family:monospace, sans-serif;}
+/* Prevent sup and sub messing line-heights, gist.github.com/413930 */
+sub,sup {font-size:75%; line-height:0; position:relative;}
+sup {top:-0.5em;}
+sub {bottom:-0.25em;}
+/* j.mp/webkit-tap-highlight-color */
+a:link {-webkit-tap-highlight-color:#2283f1;}
+/* Clearfix */
+.clearfix:before,.clearfix:after {content:"\0020"; display:block; height:0; overflow:hidden;}
+.clearfix:after {clear:both;}
+.clearfix {zoom:1;}

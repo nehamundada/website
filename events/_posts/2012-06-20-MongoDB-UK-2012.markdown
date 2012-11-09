@@ -1,0 +1,15 @@
+---
+layout: post
+title: MongoDB UK 2012
+category: events
+date: 20 Jun 2012
+location: London
+summary: MongoDB UK is an annual one day conference dedicated to the open source database MongoDB.
+---
+MongoDB UK is an annual one-day conference in London dedicated to the open source, non-relational database MongoDB. The conference will feature over 40 sessions from MongoDB developers at 10gen, MongoDB users from the community, and technology partners, with presentations for both the novice and expert.
+
+[Sean Reilly](https://twitter.com/seanjreilly) will be presenting on the main stage in the afternoon on 'Why the Schema Diagram is Ruining Enterprise Computing'. You can find out more about Sean's talk and others on the main [conference page](http://www.10gen.com/events/mongodb-uk).
+
+Equal Experts is a Professional Services Partner of [10gen](http://10gen.com). We have extensive experience delivering enterprise and consumer facing software backed by MongoDB.
+
+[Find out more](http://www.10gen.com/events/mongodb-uk)

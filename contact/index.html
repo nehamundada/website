@@ -1,0 +1,64 @@
+---
+layout: contact
+---
+ <header>
+   <h1>Contact us</h1>
+   <p class="intro">Get in touch, we're happy to talk. <br>Anytime.</p>
+  </header>
+  
+  <div class="column-main">
+   <h2>Send us a message</h2>
+   <p>Whether you'd like to learn more about Equal Experts, you're thinking of engaging with us, or you just want to introduce yourself, we'd love to hear from you.</p>
+   <form id="form" class="form"  enctype="multipart/form-data">
+    <fieldset>
+	 <legend>Contact form</legend>
+	 <div>
+	  <p>
+	  	<input id="contactform-contactUs" name="source" value="contactUs" type="hidden"/>
+	   <label for="contactform-name">Your name</label>
+	   <img src="/asset/images/icon-requiredfield.png" alt="Required field" class="requiredfield">
+	  </p>
+	  <input id="contactform-name" name="name" type="text" onblur="clearFieldError(this)">
+	 </div>
+	 <div>
+ 	  <p>
+	   <label for="contactform-email">Email address</label>
+	   <img src="/asset/images/icon-requiredfield.png" alt="Required field" class="requiredfield">
+	  </p>
+	  <input id="contactform-email" name="email" type="text" onblur="clearFieldError(this)">
+	 </div>
+	 <div>
+	  <p>
+	   <label for="contactform-message">Comments</label>
+	   <img src="/asset/images/icon-requiredfield.png" alt="Required field" class="requiredfield">
+	  </p>
+	  <textarea id="contactform-message" name="message" onblur="clearFieldError(this)"></textarea>
+	 </div>
+	 <div>
+ 	  <input class="submit" type="button" onclick="submitForm()" value="Send!" >
+	 </div>
+	</fieldset>
+   </form>
+  </div>
+    
+  <div class="column-secondary">
+   <h2>Our offices</h2>
+   <section class="contact uk">
+    <h3>London, United Kingdom</h3>
+    <ul>
+     <li class="tel"><a href="tel:+44-203-603-7830" title="Call Equal Experts UK">+44 (0)203 603 7830</a></li>
+     <li class="email"><a href="mailto:info@equalexperts.com" title="Email Equal Experts UK">info@equalexperts.com</a></li>
+     <li class="adr"><i>Equal Experts Ltd.</i><br>Hamilton House, Mabledon Place<br>Bloomsbury, London WC1H 9BB.</li>
+    </ul>
+	<a href="http://maps.google.co.uk/maps?q=Hamilton+House,+Mabledon+Place,+London,+WC1H+9BB&#38;hl=en&#38;ll=51.526635,-0.12866&#38;spn=0.042239,0.077162&#38;sll=51.519105,-0.127373&#38;sspn=0.042246,0.109863&#38;hnear=Hamilton+House,+Mabledon+Pl,+London,+Greater+London+WC1H,+United+Kingdom&#38;t=m&#38;z=14" title="Go to Google Maps" class="viewmap"><img src="/asset/images/map-uk.png" alt="#"> <span>View on Google Maps</span></a>
+   </section>
+   <section class="contact india">
+    <h3>Pune, India</h3>
+    <ul>
+	 <li class="tel"><a href="tel:+91 20 6607 7763" title="Call Equal Experts India">+91 20 6607 7763</a></li>
+     <li class="email"><a href="mailto:eeindia@equalexperts.com" title="Email Equal Experts India">eeindia@equalexperts.com</a></li>
+     <li class="adr"><i>Equal Experts India Private Ltd.</i><br>Office No. 4-C, Cerebrum IT Park No. B3<br>Kumar City, Kalyani Nagar<br>Pune, 411006.</li>
+    </ul>
+	<a href="http://maps.google.co.uk/maps?q=Cerebrum+IT+Park+No.+B3,+Kumar+City,+Pune,+411006&#38;hl=en&#38;ll=18.544314,73.900652&#38;spn=0.064367,0.077162&#38;sll=18.528642,73.890272&#38;sspn=0.064373,0.077162&#38;hq=Cerebrum+IT+Park+No.+B3,+Kumar+City,+Pune,+411006&#38;t=m&#38;z=14" title="Go to Google Maps" class="viewmap"><img src="/asset/images/map-india.png" alt="#"> <span>View on Google Maps</span></a>
+   </section>   
+  </div>

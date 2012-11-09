@@ -1,0 +1,39 @@
+---
+layout: events
+category: events
+---
+
+<header>
+   <h1>Events</h1>
+   <p class="intro">We are passionate about software development. And we like to be part of the conversation.</p>
+  </header>
+  
+  <div class="column-main">
+   <h2>Upcoming events</h2>
+   {% for post in paginator.posts reversed %}
+   {% capture isEventOld %}{{ post.date | isOldEvent }}{% endcapture %}
+   		{% if  isEventOld == 'false' %}
+		   <section>
+			 <h3>{{post.title}}</h3>
+			 <span>{{post.location}}, {{ post.date | date: "%d %B %Y" }}</span>
+			 {{post.content}}
+			</section>
+		{% endif %}
+   {% endfor %}
+  </div>
+    
+  <div class="column-secondary">
+   <h2>Past events</h2>
+   <ul>
+   	{% for post in paginator.posts %}
+   {% capture isEventOld %}{{ post.date | isOldEvent }}{% endcapture %}
+   		{% if  isEventOld == 'true' %}
+		   <li>
+			 <h3>{{post.title}}</h3>
+			 <span>{{post.location}}, {{ post.date | date: "%d %B %Y" }}</span>
+			  {{post.summary}}
+	</li>
+		{% endif %}
+   {% endfor %}
+   </ul>   
+  </div>
